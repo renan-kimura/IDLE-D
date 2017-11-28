@@ -1,4 +1,4 @@
-#include "../headers/monster.h"
+#include "../include/monster.h"
 
 //Constructors and Destructor
 Monster::Monster() = default;
