@@ -19,6 +19,11 @@
     Character::~Character() = default;
   
   //Getters
+
+  int const& Character::getLabel() const{
+    
+  }
+
   std::string const& Character::getName() const{
     return this->name;
   }

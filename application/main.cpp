@@ -86,6 +86,7 @@ Character intro(){
 	ifstream savefile(aux, ifstream::in);
 	
 	if(savefile.is_open()){
+		//cout<<system("clear");
 		return carregar(savefile);
 		
 	}else{
@@ -139,7 +140,6 @@ void save_game(Character player){
 	
 	ofstream outfile;
 	outfile.open(aux);
-	cout<<save<<endl;
 	if(outfile.is_open()){
 		outfile << save;
 	}

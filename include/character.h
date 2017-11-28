@@ -16,6 +16,7 @@ class Character {
     ~Character();
   
   //Getters
+  virtual int const& getLabel() const;
   std::string const& getName() const;
   int const& getHp() const;
   int const& getStr() const;
