@@ -131,16 +131,18 @@ Character intro(){
 //**********************************************Inicio do Save*************************************
 void save_game(Character player){
 	
-	string aux = "../data/save/" + player.getName() + ".txt", save;
+	string aux = "data/Save/" + player.getName() + ".txt", save;
 	//É só concatenar todas as informações do personagem nesse padrão aí
 	//Que já tá escrevendo no arquivo bonitinho! O problema tá no label... acho melhor que durante a criação o personagem tenha
 	//Uma string classe para identifica-lá!
 	save = ";" +player.getName()+ ";" +to_string(player.getHp())+ ";" +to_string(player.getStr())+ ";" +to_string(player.getDex())+ ";" +to_string(player.getWis())+ ";" +to_string(player.getAgi())+ ";" +to_string(player.getExp())+ ";" +to_string(player.getLvl())+ ";" +to_string(player.getNext_lvl())+ ";" +to_string(player.getMoney());
 	
-	ofstream outfile (aux);
-	
-	if(outfile.is_open())
-	outfile << save;
+	ofstream outfile;
+	outfile.open(aux);
+	cout<<save<<endl;
+	if(outfile.is_open()){.
+		outfile << save;
+	}
 	
 	outfile.close();
 }
@@ -168,7 +170,7 @@ bool game(Character player){
 		
 		} else if(num == 3){
 			save_game(player);
-			system("clear");
+			//system("clear");
 			display();
 			cout << "O seu jogo foi salvo!" << endl;
 			cout << endl;
