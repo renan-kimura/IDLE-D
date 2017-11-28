@@ -140,7 +140,7 @@ void save_game(Character player){
 	ofstream outfile;
 	outfile.open(aux);
 	cout<<save<<endl;
-	if(outfile.is_open()){.
+	if(outfile.is_open()){
 		outfile << save;
 	}
 	
