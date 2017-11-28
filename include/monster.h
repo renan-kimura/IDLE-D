@@ -3,6 +3,10 @@
 
 #include <iostream>
 #include <string>
+#include <algorithm>
+#include <vector>
+#include <fstream>
+using namespace std;
 
 class Monster {
   public:
@@ -21,10 +25,18 @@ class Monster {
   int const& getLoot() const;
   
   //Setters
+  void setName(string);
   void setHp(int);
   void setAtk(int);
   void setDef(int);
+  void setExp(int);
+  void setLoot(int);
   
+  //Funcoes
+  void assignName(string infoType,int contador,Monster &current);
+  void assign(int infoType,int contador,Monster &current);
+  vector<Monster> loadMonster();
+
   private:
     std::string name;
     int hp,
@@ -33,5 +45,7 @@ class Monster {
         exp,
         loot;
 };
+
+
 
 #endif /* MONSTER */

@@ -9,13 +9,11 @@ class Equip {
   
   //Constructors and Destructor
     Equip();
-    Equip(std::string,std::string,int,int,std::string);
+    Equip(std::string,int,int);
     ~Equip();
   
   //Getters
   std::string const& getName() const;
-  std::string const& getDescription() const;
-  std::string const& getType() const;
   int const& getAtk() const;
   int const& getDef() const;
   
@@ -25,12 +23,10 @@ class Equip {
   void setDef(int);
   
   //functions
-  void refine();
+  //void refine();
   
   private:
     std::string name;
-    std::string description;
-    std::string type;
     int atk,
         def;
 };

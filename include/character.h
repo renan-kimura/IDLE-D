@@ -29,7 +29,6 @@ class Character {
   
   //Setters
   void setHp(int);
-  void setMana(int);
   void setStr(int);
   void setDex(int);
   void setWis(int);
@@ -53,63 +52,6 @@ class Character {
         exp,
         lvl,
         next_lvl,
-        money;   
+        money;
 };
-
-
-class Warrior : public Character{
-  public:    
-    int const label = 0;
-    //constructors and destructors.
-    Warrior(std::string,int,int,int,int,int,int,int,int,int,std::vector<Equip>,std::list<Equip>);
-    Warrior();
-    ~Warrior();
-
-    //Functions
-    void lvl_up();
-    int attack(int);
-  private:
-    std::vector<Equip> equiped;
-    std::list<Equip> inventory;
-};
-class Warlock : public Character{
-  public:
-    int const label = 1;
-    //constructors and destructors.
-    Warlock(std::string,int,int,int,int,int,int,int,int,int,std::vector<Equip>,std::list<Equip>);
-    // Warlock();
-    ~Warlock();
-
-    //Functions
-    void lvl_up();
-    int attack(int);
-  private:
-    std::vector<Equip> equiped;
-    std::list<Equip> inventory;
-};
-
-class Thief : public Character{
-  public:    
-    int const label = 2;
-    //constructors and destructors.
-    Thief(std::string,int,int,int,int,int,int,int,int,int,std::vector<Equip>,std::list<Equip>);
-    // Warlock();
-    ~Thief();
-
-    //Functions
-    void lvl_up();
-    int attack(int);
-  private:
-    std::vector<Equip> equiped;
-    std::list<Equip> inventory;
-};
-
-/*
-class Habilities{
-  public:
-
-
-  private:
-};
-*/
 #endif /* CHARACTER */

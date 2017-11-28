@@ -97,75 +97,8 @@
   }
 
   //Functions
-  void lvl_up(){};
-  int attack(){};
+  void Character::lvl_up(){}
 
-      //constructors and destructors.
-    Warrior::Warrior(std::string nome,int hp,int str,int dex,int wis,int agi,int exp, int lvl,int next_lvl,int money, std::vector<Equip> equiped,std::list<Equip> inventory)
-      :Character(nome, hp, str, dex, wis, agi, exp, lvl, next_lvl, money){
-      this->equiped = equiped;
-      this->inventory = inventory;
-    }
-
-    Warrior::Warrior() = default;
-    Warrior::~Warrior() = default;
-
-    //Functions
-    void Warrior::lvl_up(){
-
-    }
-
-    int Warrior::attack(int monsterDef){
-      if (rand()%100>=95){
-          return (this->equiped[0].getAtk()+getDex())*2;
-      }else{
-        if(this->getDex()>monsterDef){
-          return this->equiped[0].getAtk()+getStr();
-        }else{
-          return 0;
-        }
-      } 
-    }
-   //constructors and destructors.
-    Warlock::Warlock(std::string nome,int hp,int str,int dex,int wis,int agi,int exp, int lvl,int next_lvl,int money, std::vector<Equip> equiped,std::list<Equip> inventory)
-      :Character(nome, hp, str, dex, wis, agi, exp, lvl, next_lvl, money){
-      this->equiped = equiped;
-      this->inventory = inventory;
-    }
-
-    Warlock::~Warlock() = default;
-
-    //Functions
-    void Warlock::lvl_up(){
-
-    }
-
-    int Warlock::attack(int monsterDef){
-        return (this->equiped[0].getAtk()+getWis())/2;
-    }
-
-   //constructors and destructors.
-    Thief::Thief(std::string nome,int hp,int str,int dex,int wis,int agi,int exp, int lvl,int next_lvl,int money, std::vector<Equip> equiped,std::list<Equip> inventory)
-      :Character(nome, hp, str, dex, wis, agi, exp, lvl, next_lvl, money){
-      this->equiped = equiped;
-      this->inventory = inventory;
-    }
-
-    Thief::~Thief() = default;
-
-    //Functions
-    void Thief::lvl_up(){
-
-    }
- int Thief::attack(int monsterDef){
-      if (rand()%100>=90){
-          return (this->equiped[0].getAtk()+getDex())*2.5;
-      }
-      else{
-        if(this->getDex()>monsterDef){
-          return this->equiped[0].getAtk()+getDex();
-        }else{
-          return 0;
-        }
-      }
-    }
+  int Character::attack(){
+    return this->str;
+  }

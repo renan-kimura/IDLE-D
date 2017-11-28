@@ -40,6 +40,10 @@ Monster::~Monster() = default;
   }
   
   //Setters
+  void Monster::setName(string name){
+    this->name = name;
+  }
+
   void Monster::setHp(int hp){
     this->hp = hp;
   }
@@ -50,4 +54,62 @@ Monster::~Monster() = default;
 
   void Monster::setDef(int def){
     this->def = def;
+  }
+
+  void Monster::setExp(int exp){
+    this->exp = exp;
+  }
+
+  void Monster::setLoot(int loot){
+    this->loot = loot;
+  }
+
+  void Monster::assignName(string infoType,int contador,Monster& current){
+    if(contador == 0)
+      this->setName(infoType);
+    else{
+      cout<<"Dado invalido";
+    }
+  }
+
+  void Monster::assign(int infoType,int contador,Monster& current){
+    if(contador == 1)
+      this->setHp(infoType);
+    if(contador == 2)
+      this->setAtk(infoType);
+    if(contador == 3)
+      this->setDef(infoType);
+    if(contador == 4)
+      this->setExp(infoType);
+    if(contador == 5)
+      this->setLoot(infoType);
+  }
+
+
+
+  vector<Monster> Monster::loadMonster(){
+    vector<Monster> monsters;
+    Monster currentMonster;
+    string atributo;
+    int contador=0, atributoInt;
+    ifstream monsterFile("Monsters.txt");
+    if(monsterFile){
+      while(getline(monsterFile, atributo, ';')){
+        if(!monsterFile.eof()){
+          if(contador == 0)
+            assignName(atributo, contador, currentMonster);
+          atributoInt = atoi(atributo.c_str());
+          assign(atributoInt, contador, currentMonster);
+
+          if(contador>5){
+            monsters.push_back(currentMonster);
+            contador = 0;
+          }
+          else
+            contador++;
+        }
+      }
+    }
+    monsterFile.close();
+    return monsters;
   }
