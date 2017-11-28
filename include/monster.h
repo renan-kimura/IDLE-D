@@ -17,25 +17,25 @@ class Monster {
     ~Monster();
   
   //Getters
-  std::string const& getName() const;
-  int const& getHp() const;
-  int const& getAtk() const;
-  int const& getDef() const;
-  int const& getExp() const;
-  int const& getLoot() const;
+  std::string const& getMonName() const;
+  int const& getMonHp() const;
+  int const& getMonAtk() const;
+  int const& getMonDef() const;
+  int const& getMonExp() const;
+  int const& getMonLoot() const;
   
   //Setters
-  void setName(string);
-  void setHp(int);
-  void setAtk(int);
-  void setDef(int);
-  void setExp(int);
-  void setLoot(int);
+  void setMonName(string, Monster&);
+  void setMonHp(int, Monster &current);
+  void setMonAtk(int, Monster &current);
+  void setMonDef(int, Monster &current);
+  void setMonExp(int, Monster &current);
+  void setMonLoot(int, Monster &current);
   
   //Funcoes
-  void assignName(string infoType,int contador,Monster &current);
-  void assign(int infoType,int contador,Monster &current);
-  vector<Monster> loadMonster();
+  void assignMonName(string infoType,int contador,Monster &current);
+  void assignMon(int infoType,int contador,Monster &current);
+  vector<Monster> loadMonster(vector<Monster> &monsters);
 
   private:
     std::string name;

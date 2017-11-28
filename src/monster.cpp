@@ -1,4 +1,4 @@
-#include "../include/monster.h"
+#include "../headers/monster.h"
 
 //Constructors and Destructor
 Monster::Monster() = default;
@@ -15,80 +15,85 @@ Monster::Monster(std::string name, int hp, int atk, int def, int exp, int loot){
 Monster::~Monster() = default;
 
 //Getters
-  std::string const& Monster::getName() const{
+  std::string const& Monster::getMonName() const{
   return this->name;
   }
 
-  int const& Monster::getHp() const{
+  int const& Monster::getMonHp() const{
     return this->hp;
   }
 
-  int const& Monster::getAtk() const{
+  int const& Monster::getMonAtk() const{
     return this->atk;
   }
 
-  int const& Monster::getDef() const{
+  int const& Monster::getMonDef() const{
     return this->def;
   }
 
-  int const& Monster::getExp() const{
+  int const& Monster::getMonExp() const{
     return this->exp;
   }
 
-  int const& Monster::getLoot() const{
+  int const& Monster::getMonLoot() const{
     return this->loot;
   }
   
   //Setters
-  void Monster::setName(string name){
-    this->name = name;
+  void Monster::setMonName(string name, Monster &current){
+    current.name = name;
+    cout<<"Name:"<<current.name<<endl;
   }
 
-  void Monster::setHp(int hp){
-    this->hp = hp;
+  void Monster::setMonHp(int hp, Monster &current){
+    current.hp = hp;
+    cout<<"Hp:"<<current.hp<<endl;
   }
 
-  void Monster::setAtk(int atk){
-    this->atk = atk;
+  void Monster::setMonAtk(int atk, Monster &current){
+    current.atk = atk;
+    cout<<"Atk:"<<current.atk<<endl;
   }
 
-  void Monster::setDef(int def){
-    this->def = def;
+  void Monster::setMonDef(int def, Monster &current){
+    current.def = def;
+    cout<<"Def:"<<current.def<<endl;
   }
 
-  void Monster::setExp(int exp){
-    this->exp = exp;
+  void Monster::setMonExp(int exp, Monster &current){
+    current.exp = exp;
+    cout<<"Exp:"<<current.exp<<endl;
   }
 
-  void Monster::setLoot(int loot){
-    this->loot = loot;
+  void Monster::setMonLoot(int loot, Monster &current){
+    current.loot = loot;
+    cout<<"Loot:"<<current.loot<<endl;
   }
 
-  void Monster::assignName(string infoType,int contador,Monster& current){
+  void Monster::assignMonName(string infoType,int contador,Monster& current){
     if(contador == 0)
-      this->setName(infoType);
+      this->setMonName(infoType, current);
     else{
       cout<<"Dado invalido";
     }
   }
 
-  void Monster::assign(int infoType,int contador,Monster& current){
+  void Monster::assignMon(int infoType,int contador,Monster& current){
     if(contador == 1)
-      this->setHp(infoType);
+      this->setMonHp(infoType, current);
     if(contador == 2)
-      this->setAtk(infoType);
+      this->setMonAtk(infoType, current);
     if(contador == 3)
-      this->setDef(infoType);
+      this->setMonDef(infoType, current);
     if(contador == 4)
-      this->setExp(infoType);
+      this->setMonExp(infoType, current);
     if(contador == 5)
-      this->setLoot(infoType);
+      this->setMonLoot(infoType, current);
   }
 
 
 
-  vector<Monster> Monster::loadMonster(){
-    vector<Monster> monsters;
+  vector<Monster> Monster::loadMonster(vector<Monster> &monsters){
     Monster currentMonster;
     string atributo;
     int contador=0, atributoInt;
@@ -97,11 +102,11 @@ Monster::~Monster() = default;
       while(getline(monsterFile, atributo, ';')){
         if(!monsterFile.eof()){
           if(contador == 0)
-            assignName(atributo, contador, currentMonster);
+            assignMonName(atributo, contador, currentMonster);
           atributoInt = atoi(atributo.c_str());
-          assign(atributoInt, contador, currentMonster);
+          assignMon(atributoInt, contador, currentMonster);
 
-          if(contador>5){
+          if(contador==5){
             monsters.push_back(currentMonster);
             contador = 0;
           }
