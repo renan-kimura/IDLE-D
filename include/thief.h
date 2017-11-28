@@ -16,7 +16,7 @@ class Thief : public Character{
     ~Thief();
     
     //Getters
-    int const& getLabel() const;
+    virtual int const& getLabel() const override;
   
     //Functions
     void lvl_up();

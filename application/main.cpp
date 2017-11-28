@@ -81,11 +81,12 @@ Character intro(){
 	
 	cin >> username;
 	
-	aux = "../data/save/" + username + ".txt";
+	aux = "data/Save/" + username + ".txt";
 
 	ifstream savefile(aux, ifstream::in);
 	
 	if(savefile.is_open()){
+		//cout<<system("clear");
 		return carregar(savefile);
 		
 	}else{
@@ -139,7 +140,6 @@ void save_game(Character player){
 	
 	ofstream outfile;
 	outfile.open(aux);
-	cout<<save<<endl;
 	if(outfile.is_open()){
 		outfile << save;
 	}
@@ -170,7 +170,7 @@ bool game(Character player){
 		
 		} else if(num == 3){
 			save_game(player);
-			//system("clear");
+			system("clear");
 			display();
 			cout << "O seu jogo foi salvo!" << endl;
 			cout << endl;

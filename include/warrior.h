@@ -16,7 +16,7 @@ class Warrior : public Character{
     ~Warrior();
     
     //Getters
-   int const& getLabel() const;
+   virtual int const& getLabel() const override;
 
     //Functions
     void lvl_up();
