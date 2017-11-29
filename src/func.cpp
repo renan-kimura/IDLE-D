@@ -131,7 +131,7 @@ bool game(Character player){
 		cin >> num;
 		
 		if(num == 1){
-			//dungeon(player);
+			player.battle();
 			
 		} else if(num == 2){
 			//menu(player);
