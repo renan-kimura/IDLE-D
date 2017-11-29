@@ -145,7 +145,7 @@ bool game(Character player){
 		
 		} else if(num == 4){
 			system("clear");
-			return true;
+			player = intro();
 		
 		} else if(num == 5){
 			system("clear");
@@ -164,4 +164,17 @@ bool game(Character player){
 	cout << "Fechando o programa!!!\033[39m" << endl;
 	return false;
 }
+
+//**********************************************Carregamento dos monstros****************************************
+void Monster::ranMonster(Monster &aleatorio){
+	srand(time(NULL));
+	Monster* carregador = new Monster();
+	vector<Monster> allMonsters;
+	allMonsters = carregador->loadMonster(allMonsters);
+	aleatorio = allMonsters[rand()%allMonsters.size()];
+	cout<<aleatorio.getMonName();
+}
+
+//**********************************************Fim do carregamento dos monstros*************************************
+
 //**********************************************Fim do jogo****************************************

@@ -42,32 +42,26 @@ Monster::~Monster() = default;
   //Setters
   void Monster::setMonName(string name, Monster &current){
     current.name = name;
-    cout<<"Name:"<<current.name<<endl;
   }
 
   void Monster::setMonHp(int hp, Monster &current){
     current.hp = hp;
-    cout<<"Hp:"<<current.hp<<endl;
   }
 
   void Monster::setMonAtk(int atk, Monster &current){
     current.atk = atk;
-    cout<<"Atk:"<<current.atk<<endl;
   }
 
   void Monster::setMonDef(int def, Monster &current){
     current.def = def;
-    cout<<"Def:"<<current.def<<endl;
   }
 
   void Monster::setMonExp(int exp, Monster &current){
     current.exp = exp;
-    cout<<"Exp:"<<current.exp<<endl;
   }
 
   void Monster::setMonLoot(int loot, Monster &current){
     current.loot = loot;
-    cout<<"Loot:"<<current.loot<<endl;
   }
 
   void Monster::assignMonName(string infoType,int contador,Monster& current){
@@ -97,7 +91,7 @@ Monster::~Monster() = default;
     Monster currentMonster;
     string atributo;
     int contador=0, atributoInt;
-    ifstream monsterFile("Monsters.txt");
+    ifstream monsterFile("data/monster_database.txt");
     if(monsterFile){
       while(getline(monsterFile, atributo, ';')){
         if(!monsterFile.eof()){

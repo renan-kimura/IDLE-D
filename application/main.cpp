@@ -14,6 +14,9 @@
 using namespace std;
 
 int main(){
+	Monster teste;
+	teste.ranMonster(teste);
+
 	Character player;
 	bool voltar = true;
 	

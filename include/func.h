@@ -11,6 +11,8 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+#include <stdlib.h>
+#include <time.h>
 
 void display();
 Character carregar(ifstream&);

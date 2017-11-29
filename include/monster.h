@@ -36,6 +36,7 @@ class Monster {
   void assignMonName(string infoType,int contador,Monster &current);
   void assignMon(int infoType,int contador,Monster &current);
   vector<Monster> loadMonster(vector<Monster> &monsters);
+  void ranMonster(Monster &aleatorio);
 
   private:
     std::string name;
