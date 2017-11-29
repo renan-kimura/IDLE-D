@@ -86,7 +86,6 @@ Monster::~Monster() = default;
   }
 
 
-
   vector<Monster> Monster::loadMonster(vector<Monster> &monsters){
     Monster currentMonster;
     string atributo;
@@ -111,4 +110,12 @@ Monster::~Monster() = default;
     }
     monsterFile.close();
     return monsters;
+  }
+
+  void Monster::ranMonster(Monster &aleatorio){
+    srand(time(NULL));
+    Monster* carregador = new Monster();
+    vector<Monster> allMonsters;
+    allMonsters = carregador->loadMonster(allMonsters);
+    aleatorio = allMonsters[rand()%allMonsters.size()];
   }
