@@ -40,6 +40,7 @@ class Character {
   void setMoney(int);
 
   //Functions
+  void battle();
   void lvl_up();
   int attack();
   

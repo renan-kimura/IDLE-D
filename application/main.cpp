@@ -14,9 +14,6 @@
 using namespace std;
 
 int main(){
-	Monster teste;
-	teste.ranMonster(teste);
-
 	Character player;
 	bool voltar = true;
 	
@@ -24,7 +21,7 @@ int main(){
 	
 	if(voltar){
 		player = intro();
-
+		player.battle();
 		if(player.getHp() != -999999)
 			game(player);
 	}

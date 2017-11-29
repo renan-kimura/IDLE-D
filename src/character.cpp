@@ -1,4 +1,5 @@
 #include "../include/character.h"
+#include "../include/func.h"
 
 //Constructors and Destructor
     Character::Character(std::string name,int hp,int str,int dex,int wis,int agi,int exp, int lvl,int next_lvl,int money){
@@ -19,6 +20,40 @@
     Character::~Character() = default;
   
   //Getters
+
+
+/*void Character::battle() {
+  Monster oponente;
+  oponente.ranMonster(oponente); 
+  int HpJogador = getHp();
+  int HpOponente = monstroAndar.getMonHP();
+  int cabou=0;
+  while(){
+    cabou=0;
+    srand(time(NULL));
+    if((rand() % 20 + 1) + getDex() >= monstroAndar.getMonDef()){
+      cout << "Voce acertou o oponente, causando " << attack() << "pontos de dano!";
+      HpOponente -= attack();
+      }else{
+      cout << "Voce errou seu ataque.";
+      }
+    if(HpOponente <= 0){
+      cout << "Voce venceu o combate!";
+      setExp(getExp()+monstroAndar.getMonExp());
+      cabou++;
+      }
+    cout << monstroAndar.getMonName() << " acertou um ataque em voce, causando " << monstroAndar.getMonAtk() << " de dano.";
+    HpJogador -= monstroAndar.getMonAtk();
+    if(HpJogador <= 0){
+      cout << "Voce foi derrotado!";
+      cabou++;
+      }
+    if(cabou!=0){
+      HpJogador = getHp();
+      HpOponente = monstroAndar.getMonHP();
+      }
+    }
+  }*/
 
   int const& Character::getLabel() const{
     

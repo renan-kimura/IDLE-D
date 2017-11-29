@@ -26,13 +26,13 @@ Character carregar(string name, int num){
 	vector<Equip> new_vector;
 	//Tratamento de teste já foi feito pela função que chama essa!!!
 	if(num == 1){
-		Warrior player(name,12,17,12,10,12,0,1,100,0,new_vector,new_list);
+		Warrior player(name,200,30,3,10,12,0,1,100,0,new_vector,new_list);
 		return player;
 	} else if(num == 2){
-		Warlock player(name,6,10,12,17,12,0,1,100,0,new_vector,new_list);
+		Warlock player(name,150,20,10,17,12,0,1,100,0,new_vector,new_list);
 		return player;
 	} else {
-		Thief player(name,8,10,17,10,17,0,1,100,0,new_vector,new_list);
+		Thief player(name,100,15,15,10,17,0,1,100,0,new_vector,new_list);
 		return player;
 	}
 }
@@ -172,8 +172,43 @@ void Monster::ranMonster(Monster &aleatorio){
 	vector<Monster> allMonsters;
 	allMonsters = carregador->loadMonster(allMonsters);
 	aleatorio = allMonsters[rand()%allMonsters.size()];
-	cout<<aleatorio.getMonName();
 }
+
+void Character::battle() {
+  srand(time(NULL));
+  Monster monstroAndar;
+  monstroAndar.ranMonster(monstroAndar); 
+  int HpJogador = getHp();
+  int HpOponente = monstroAndar.getMonHp();
+  int cabou=0;
+  while(1){
+    cabou=0;
+    srand(time(NULL));
+    usleep(1000*1000);
+    if((rand() % 20 + 1) + getDex() >= monstroAndar.getMonDef()){	
+      cout << "Voce acertou o oponente, causando " << attack() << "pontos de dano!"<<endl;
+      HpOponente -= attack();
+      }else{
+      cout << "Voce errou seu ataque."<<endl;
+      }
+    if(HpOponente <= 0){
+      cout << "Voce venceu o combate!"<<endl;
+      setExp(getExp()+monstroAndar.getMonExp());
+      cabou++;
+      }
+    usleep(1000*1000);
+    cout << monstroAndar.getMonName() << " acertou um ataque em voce, causando " << monstroAndar.getMonAtk() << " de dano."<<endl;
+    HpJogador -= monstroAndar.getMonAtk();
+    if(HpJogador <= 0){
+      cout << "Voce foi derrotado!"<<endl;
+      cabou++;
+      }
+    if(cabou!=0){
+      HpJogador = getHp();
+      HpOponente = monstroAndar.getMonHp();
+      }
+    }
+  }
 
 //**********************************************Fim do carregamento dos monstros*************************************
 
