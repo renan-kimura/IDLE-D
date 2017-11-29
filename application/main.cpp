@@ -15,14 +15,10 @@ using namespace std;
 
 int main(){
 	Character player;
-	bool voltar = true;
 	
 	system("clear");
-	
-	if(voltar){
-		player = intro();
-		player.battle();
-		if(player.getHp() != -999999)
-			game(player);
-	}
+
+	player = intro();
+	if(player.getHp() != -999999)
+		game(player);
 }
