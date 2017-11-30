@@ -27,16 +27,16 @@ Character carregar(string name, int num){
 	Character * jogador;
 	//Tratamento de teste já foi feito pela função que chama essa!!!
 	if(num == 1){
-		Warrior player(name,200,30,8,10,12,0,1,100,0,new_vector,new_list);
+		Warrior player(name,150,30,8,10,0,1,100,0,new_vector,new_list);
 		jogador = &player;
 		return player;
 
 	} else if(num == 2){
-		Warlock player(name,150,20,10,17,12,0,1,100,0,new_vector,new_list);
+		Warlock player(name,80,20,10,17,0,1,100,0,new_vector,new_list);
 		jogador = &player;
 		return player;
 	} else {
-		Thief player(name,100,15,15,10,17,0,1,100,0,new_vector,new_list);
+		Thief player(name,100,15,15,10,0,1,100,0,new_vector,new_list);
 		jogador = &player;
 		return player;
 	}
@@ -110,7 +110,7 @@ void save_game(Character player){
 	//É só concatenar todas as informações do personagem nesse padrão aí
 	//Que já tá escrevendo no arquivo bonitinho! O problema tá no label... acho melhor que durante a criação o personagem tenha
 	//Uma string classe para identifica-lá!
-	save = ";" +player.getName()+ ";" +to_string(player.getHp())+ ";" +to_string(player.getStr())+ ";" +to_string(player.getDex())+ ";" +to_string(player.getWis())+ ";" +to_string(player.getAgi())+ ";" +to_string(player.getExp())+ ";" +to_string(player.getLvl())+ ";" +to_string(player.getNext_lvl())+ ";" +to_string(player.getMoney());
+	save = ";" +player.getName()+ ";" +to_string(player.getHp())+ ";" +to_string(player.getStr())+ ";" +to_string(player.getDex())+ ";" +to_string(player.getWis()) + ";" +to_string(player.getExp())+ ";" +to_string(player.getLvl())+ ";" +to_string(player.getNext_lvl())+ ";" +to_string(player.getMoney());
 	
 	ofstream outfile;
 	outfile.open(aux);
@@ -127,7 +127,7 @@ bool game(Character player){
 	bool laco = true;
 	
 	while(laco){
-		cout << "Bem vindo a cidade de Crystal Water! Lar da dungeon infinita!" << endl;
+		cout << "Bem vindo, "<<player.getName()<<", a cidade de Crystal Water! Lar da dungeon infinita!" << endl;
 		cout << "[1] Enfrentar a dungeon." << endl;
 		cout << "[2] Ir ao inventario.(Em breve)" << endl;
 		cout << "[3] Salvar o jogo." << endl;
@@ -137,7 +137,7 @@ bool game(Character player){
 		cin >> num;
 		
 		if(num == 1){
-			cout<<"HP:"<<player.getHp()<<endl;
+			system("clear");
 			cout<<"Exp:"<<player.getExp()<<endl;
 			player.battle();
 			

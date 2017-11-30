@@ -11,14 +11,13 @@
 class Thief : public Character{
   public:    
     //constructors and destructors.
-    Thief(std::string,int,int,int,int,int,int,int,int,int,std::vector<Equip>,std::list<Equip>);
+    Thief(std::string,int,int,int,int,int,int,int,int,std::vector<Equip>,std::list<Equip>);
     ~Thief();
     
     //Getters
   
     //Functions
     int lvl_up() {
-      std::cout << "Thief" << std::endl;
       return 3;
     }
     int attack(int);

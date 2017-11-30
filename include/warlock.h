@@ -12,7 +12,7 @@ class Warlock : public Character{
   public:
 
     //constructors and destructors.
-    Warlock(std::string,int,int,int,int,int,int,int,int,int,std::vector<Equip>,std::list<Equip>);
+    Warlock(std::string,int,int,int,int,int,int,int,int,std::vector<Equip>,std::list<Equip>);
     // Warlock();
     ~Warlock();
     
@@ -20,7 +20,6 @@ class Warlock : public Character{
   
     //Functions
     int lvl_up() {
-      std::cout << "Warlock" << std::endl;
       return 2;
     }
     int attack(int);

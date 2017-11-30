@@ -1,8 +1,8 @@
 #include "../include/warrior.h"
 
     //constructors and destructors.
-    Warrior::Warrior(std::string nome,int hp,int str,int dex,int wis,int agi,int exp, int lvl,int next_lvl,int money, std::vector<Equip> equiped,std::list<Equip> inventory)
-      :Character(nome, hp, str, dex, wis, agi, exp, lvl, next_lvl, money){
+    Warrior::Warrior(std::string nome,int hp,int str,int dex,int wis,int exp, int lvl,int next_lvl,int money, std::vector<Equip> equiped,std::list<Equip> inventory)
+      :Character(nome, hp, str, dex, wis, exp, lvl, next_lvl, money){
       this->equiped = equiped;
       this->inventory = inventory;
     }
@@ -11,9 +11,6 @@
     Warrior::~Warrior() = default;
 
     //Getters
-    int const& Warrior::getLabel() const{
-      return this->label;
-    }
 
     //Functions
     int Warrior::attack(int monsterDef){

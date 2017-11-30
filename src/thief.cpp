@@ -1,17 +1,14 @@
 #include "../include/thief.h"   
 
     //constructors and destructors.
-    Thief::Thief(std::string nome,int hp,int str,int dex,int wis,int agi,int exp, int lvl,int next_lvl,int money, std::vector<Equip> equiped,std::list<Equip> inventory)
-      :Character(nome, hp, str, dex, wis, agi, exp, lvl, next_lvl, money){
+    Thief::Thief(std::string nome,int hp,int str,int dex,int wis,int exp, int lvl,int next_lvl,int money, std::vector<Equip> equiped,std::list<Equip> inventory)
+      :Character(nome, hp, str, dex, wis, exp, lvl, next_lvl, money){
       this->equiped = equiped;
       this->inventory = inventory;
     }
 
     Thief::~Thief() = default;
      //Getters
-     int const& Thief::getLabel() const{
-        return this->label;
-     }
 
     //Functions
  int Thief::attack(int monsterDef){

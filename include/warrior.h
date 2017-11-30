@@ -11,7 +11,7 @@
 class Warrior : public Character{
   public:    
     //constructors and destructors.
-    Warrior(std::string,int,int,int,int,int,int,int,int,int,std::vector<Equip>,std::list<Equip>);
+    Warrior(std::string,int,int,int,int,int,int,int,int,std::vector<Equip>,std::list<Equip>);
     Warrior();
     ~Warrior();
     
@@ -19,7 +19,6 @@ class Warrior : public Character{
 
     //Functions
     int lvl_up() {
-      std::cout << "Warrior" << std::endl;
       return 1;
     }
     int attack(int);

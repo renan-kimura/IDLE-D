@@ -11,7 +11,7 @@ class Character {
   public:
   
   //Constructors and Destructor
-    Character(std::string,int,int,int,int,int,int,int,int,int);
+    Character(std::string,int,int,int,int,int,int,int,int);
     Character();
     ~Character();
   
@@ -21,7 +21,6 @@ class Character {
   int const& getStr() const;
   int const& getDex() const;
   int const& getWis() const;
-  int const& getAgi() const;
   int const& getExp() const;
   int const& getLvl() const;
   int const& getNext_lvl() const;
@@ -32,7 +31,6 @@ class Character {
   void setStr(int);
   void setDex(int);
   void setWis(int);
-  void setAgi(int);
   void setExp(int);
   void setLvl(int);
   void setNext_lvl(int);
@@ -49,7 +47,6 @@ class Character {
         str,
         dex,
         wis,
-        agi,
         exp,
         lvl,
         next_lvl,
