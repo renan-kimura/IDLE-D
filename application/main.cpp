@@ -19,6 +19,7 @@ int main(){
 	system("clear");
 
 	player = intro();
+	//player->lvl_up();
 	if(player.getHp() != -999999)
 		game(player);
 }

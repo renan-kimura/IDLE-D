@@ -16,10 +16,6 @@
     }
 
     //Functions
-    void Warrior::lvl_up(){
-
-    }
-
     int Warrior::attack(int monsterDef){
       if (rand()%100>=95){
           return (this->equiped[0].getAtk()+getDex())*2;

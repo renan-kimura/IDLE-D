@@ -17,10 +17,12 @@ class Warlock : public Character{
     ~Warlock();
     
     //Getters
-    virtual int const& getLabel() const override;
   
     //Functions
-    void lvl_up();
+    int lvl_up() {
+      std::cout << "Warlock" << std::endl;
+      return 2;
+    }
     int attack(int);
   private:
     std::vector<Equip> equiped;

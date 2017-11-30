@@ -16,7 +16,6 @@ class Character {
     ~Character();
   
   //Getters
-  virtual int const& getLabel() const;
   std::string const& getName() const;
   int const& getHp() const;
   int const& getStr() const;
@@ -41,7 +40,7 @@ class Character {
 
   //Functions
   void battle();
-  void lvl_up();
+  virtual int lvl_up();
   int attack();
   
   private:
@@ -56,4 +55,6 @@ class Character {
         next_lvl,
         money;
 };
+
+
 #endif /* CHARACTER */

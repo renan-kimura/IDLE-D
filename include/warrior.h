@@ -16,10 +16,12 @@ class Warrior : public Character{
     ~Warrior();
     
     //Getters
-   virtual int const& getLabel() const override;
 
     //Functions
-    void lvl_up();
+    int lvl_up() {
+      std::cout << "Warrior" << std::endl;
+      return 1;
+    }
     int attack(int);
   
   private:

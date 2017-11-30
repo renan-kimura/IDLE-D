@@ -14,9 +14,6 @@
      }
 
     //Functions
-    void Thief::lvl_up(){
-
-    }
  int Thief::attack(int monsterDef){
       if (rand()%100>=90){
           return (this->equiped[0].getAtk()+getDex())*2.5;

@@ -24,15 +24,20 @@ Character carregar(ifstream& file){
 Character carregar(string name, int num){
 	list<Equip> new_list;
 	vector<Equip> new_vector;
+	Character * jogador;
 	//Tratamento de teste já foi feito pela função que chama essa!!!
 	if(num == 1){
-		Warrior player(name,200,30,3,10,12,0,1,100,0,new_vector,new_list);
+		Warrior player(name,200,30,8,10,12,0,1,100,0,new_vector,new_list);
+		jogador = &player;
 		return player;
+
 	} else if(num == 2){
 		Warlock player(name,150,20,10,17,12,0,1,100,0,new_vector,new_list);
+		jogador = &player;
 		return player;
 	} else {
 		Thief player(name,100,15,15,10,17,0,1,100,0,new_vector,new_list);
+		jogador = &player;
 		return player;
 	}
 }
@@ -74,6 +79,7 @@ Character intro(){
 					cout << "\033[91mOpcao invalida!\033[39m" << endl;
 					
 				} else {
+					system("clear");
 					return carregar(username,num);
 					
 				}
@@ -123,7 +129,7 @@ bool game(Character player){
 	while(laco){
 		cout << "Bem vindo a cidade de Crystal Water! Lar da dungeon infinita!" << endl;
 		cout << "[1] Enfrentar a dungeon." << endl;
-		cout << "[2] Ir ao inventario." << endl;
+		cout << "[2] Ir ao inventario.(Em breve)" << endl;
 		cout << "[3] Salvar o jogo." << endl;
 		cout << "[4] Voltar ao menu inicial." << endl;
 		cout << "[5] Sair do jogo." << endl;
@@ -131,6 +137,8 @@ bool game(Character player){
 		cin >> num;
 		
 		if(num == 1){
+			cout<<"HP:"<<player.getHp()<<endl;
+			cout<<"Exp:"<<player.getExp()<<endl;
 			player.battle();
 			
 		} else if(num == 2){

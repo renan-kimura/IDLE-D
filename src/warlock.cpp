@@ -15,10 +15,6 @@
     }
 
     //Functions
-    void Warlock::lvl_up(){
-
-    }
-
     int Warlock::attack(int monsterDef){
         return (this->equiped[0].getAtk()+getWis())/2;
     }

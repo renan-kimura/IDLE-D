@@ -18,6 +18,7 @@
 
 void display();
 Character carregar(ifstream&);
+
 Character carregar(string, int);
 Character intro();
 void save_game(Character);

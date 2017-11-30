@@ -12,14 +12,15 @@ class Thief : public Character{
   public:    
     //constructors and destructors.
     Thief(std::string,int,int,int,int,int,int,int,int,int,std::vector<Equip>,std::list<Equip>);
-    // Warlock();
     ~Thief();
     
     //Getters
-    virtual int const& getLabel() const override;
   
     //Functions
-    void lvl_up();
+    int lvl_up() {
+      std::cout << "Thief" << std::endl;
+      return 3;
+    }
     int attack(int);
   private:
     std::vector<Equip> equiped;
